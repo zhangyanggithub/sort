@@ -55,6 +55,22 @@ var sort_insert = function (arr) {
         return arr;
     }
 };
+
+
+function sortInsert(arr) {
+    var sArr = arr.slice(0);
+    for (var i = 1; i < sArr.length; i++) {
+        var temp = sArr[i];
+        for (var j = i; j > 0 && temp < sArr[j - 1]; j--) {
+            sArr[j] = sArr[j - 1];
+        }
+        sArr[j] = temp;
+    }
+    return sArr;
+}
+
+
+
 var sort_insert_binary = function (arr) {
     if(arr.length > 1){
         for(var j = 1;j<arr.length; j++){
